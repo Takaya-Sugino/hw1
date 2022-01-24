@@ -79,6 +79,7 @@
 -- Prints a header for the movies output
 .print "Movies"
 .print "======"
+SELECT title, year, rating, director FROM movies;
 .print ""
 
 -- The SQL statement for the movies output
@@ -88,8 +89,256 @@
 .print ""
 .print "Top Cast"
 .print "========"
+SELECT movies.title, topcasts.name, topcasts.role
+FROM topcasts
+INNER JOIN movies on movies.id = topcasts.movie_id;
 .print ""
 
 
 -- The SQL statement for the cast output
 -- TODO!
+
+DROP TABLE IF EXISTS movies;
+DROP TABLE IF EXISTS topcasts;
+
+CREATE TABLE movies (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title TEXT,
+    year TEXT,
+    rating TEXT,
+    director TEXT
+);
+
+CREATE TABLE topcasts (
+    id INTEGER PRIMARY KEY AUTOINCREMENT, 
+    name TEXT,
+    role TEXT,
+    movie_id INTEGER 
+);
+
+INSERT INTO movies (
+    id,
+    title,
+    year,
+    rating,
+    director
+)
+VALUES (
+    "1",
+    "Batman Begins",
+    "2005",
+    "PG-13",
+    "Christopher Nolan"
+);
+
+INSERT INTO movies (
+    id,
+    title,
+    year,
+    rating,
+    director
+)
+VALUES (
+    "2",
+    "The Dark Knight",
+    "2008",
+    "PG-13",
+    "Christopher Nolan"
+);
+INSERT INTO movies (
+    id,
+    title,
+    year,
+    rating,
+    director
+)
+VALUES (
+    "3",
+    "The Dark Knight Rises",
+    "2012",
+    "PG-13",
+    "Christopher Nolan"
+);
+
+INSERT INTO topcasts (
+    id,
+    name,
+    role,
+    movie_id
+)
+VALUES (
+    NULL,
+    "Christian Bale",
+    "Bruce Wayne",
+    "1"
+);
+
+INSERT INTO topcasts (
+    id,
+    name,
+    role,
+    movie_id
+)
+VALUES (
+    NULL,
+    "Michael Caine",
+    "Alfred",
+    "1"
+);
+INSERT INTO topcasts (
+    id,
+    name,
+    role,
+    movie_id
+)
+VALUES (
+    NULL,
+    "Liam Neeson",
+    "Ra's Al Ghul",
+    "1"
+);
+INSERT INTO topcasts (
+    id,
+    name,
+    role,
+    movie_id
+)
+VALUES (
+    NULL,
+    "Katie Holmes",
+    "Rachel Daves",
+    "1"
+);
+INSERT INTO topcasts (
+    id,
+    name,
+    role,
+    movie_id
+)
+VALUES (
+    NULL,
+    "Gary Oldman",
+    "Comissioner Gordon",
+    "1"
+);
+INSERT INTO topcasts (
+    id,
+    name,
+    role,
+    movie_id
+)
+VALUES (
+    NULL,
+    "Christian Bale",
+    "Bruce Wayne",
+    "2"
+);
+INSERT INTO topcasts (
+    id,
+    name,
+    role,
+    movie_id
+)
+VALUES (
+    NULL,
+    "Heath Ledger",
+    "Joker",
+    "2"
+);
+INSERT INTO topcasts (
+    id,
+    name,
+    role,
+    movie_id
+)
+VALUES (
+    NULL,
+    "Aaron Eckhart",
+    "Harvey Dent",
+    "2"
+);
+INSERT INTO topcasts (
+    id,
+    name,
+    role,
+    movie_id
+)
+VALUES (
+    NULL,
+    "Michael Caine",
+    "Alfred",
+    "2"
+);
+INSERT INTO topcasts (
+    id,
+    name,
+    role,
+    movie_id
+)
+VALUES (
+    NULL,
+    "Maggie Gyllenhaal",
+    "Rachel Dawes",
+    "2"
+);
+INSERT INTO topcasts (
+    id,
+    name,
+    role,
+    movie_id
+)
+VALUES (
+    NULL,
+    "Christian Bale",
+    "Bruce Wayne",
+    "3"
+);
+INSERT INTO topcasts (
+    id,
+    name,
+    role,
+    movie_id
+)
+VALUES (
+    NULL,
+    "Gary Oldman",
+    "Commissioner Gordon",
+    "3"
+);
+INSERT INTO topcasts (
+    id,
+    name,
+    role,
+    movie_id
+)
+VALUES (
+    NULL,
+    "Tom Hardy",
+    "Bane",
+    "3"
+);
+INSERT INTO topcasts (
+    id,
+    name,
+    role,
+    movie_id
+)
+VALUES (
+    NULL,
+    "Joseph Gordon-Levitt",
+    "John Blake",
+    "3"
+);
+INSERT INTO topcasts (
+    id,
+    name,
+    role,
+    movie_id
+)
+VALUES (
+    NULL,
+    "Ann Hathaway",
+    "Selina Kyle",
+    "3"
+);
+
